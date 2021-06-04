@@ -1,0 +1,102 @@
+FUNCTIONS
+
+FUNCTION FOR DISPLAYING CREATING ACCOUNT LOGIN PAGE(DIALOG BOX)
+displayDialogBox(response){
+display "Welcome to Ayesha Beauty Creation
+Sign in
+Create Account"
+if(response==Sign in) then
+display "Enter Credentials
+1. Username
+2. Password"
+elseif(response==Create Account)then
+display" Create new account
+1. Username
+2. Password
+3. Verify password"}
+
+FUNCTION CALL
+START
+Prompt response
+Get response
+dialogBox(response)
+END
+
+
+FUNCTION FOR TAKING AND CHECKING VALIDITY OF ENTERED CREDENTIALS
+validation(name,password){
+Prompt name
+Get name
+if(name==<CHAR(20)) AND (name==CHAR) then
+display "Name saved!"
+else display " "Name entered is too long"+"please enter name between 1 to 20 characters" "
+endif
+Prompt password
+Get password
+paawordLength
+Case of(password){
+>5 INT: display "password is too long!, please enter password with 5 intergers" 
+<5 INT: display "password is too short!,please enter password with 5 intergers" 
+<=5 INT: display "enter password again"
+entered twice: display "password saved!"
+NOT INT: display "password should contain integers only!"
+Default message: "Invalid input!,please try again"
+endcase
+}
+
+FUNCTION CALL
+START
+Prompt name
+Get name
+Prompt password
+Get password
+validation(name,password)
+END
+
+FUNCTION THAT WILL CALCULATE AND DISPLAY TOTAL PRICE
+totalPrice(numberOfItems,itemPrice){
+count=0
+if(numberOfitems>count)then
+totalPrice=totalPrice+numberOfItems(count)*itemPrice
+count=count+1
+endif
+return totalPrice
+}
+
+FUNCTION CALL
+START
+Prompt numberOfItems
+Get numberOfItems
+Prompt itemPrice
+Get itemPrice
+totalPrice(numberOfItems,itemPrice)
+END
+
+
+FUNCTION THAT WILL SEARCH AND DISPLAY PRICE OF SPECIFIC ITEM
+itemPrice(itemNumber){
+items[100]
+search key=itemNumber
+count=0
+dowhile(count<100)
+if(searchkey==items[count])
+display "itemPrice"
+else
+count=count+1
+endif
+}
+
+FUNCTION CALL
+START
+Prompt itemNumber
+Get itemNumber
+itemPrice(itemNumber)
+END
+
+
+
+
+
+
+
+

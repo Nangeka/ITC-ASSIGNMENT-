@@ -1,0 +1,247 @@
+AYESHA BEAUTY CREATION
+FOR USERS(CLIENTS)
+CREATING AN ACCOUNT
+START
+Prompt name
+Get name
+if(name==<CHAR(20)) AND (name==CHAR) then
+display "Name saved!"
+else display "Name entered is too long,please enter name between 1 to 20 characters" 
+endif
+Prompt password
+Get password
+passwordLength=5
+Case of(passwordLength){
+>5 INT: display "password is too long!, please enter password with 5 intergers" 
+<5 INT: display "password is too short!,please enter password with 5 intergers" 
+=5 INT: display "display "password saved!"
+Default message: "Invalid input!,please try again"
+endcase
+display "Would you like to get notifications from us?"
+Get response (YES/NO)
+if(response==YES) then
+Prompt emailAddress
+Get emailAddress
+elseif(response==NO) then
+display "We wont send any notifications to this account"
+endif
+endif
+case of(emailAddress){
+Valid: display " "Notifications will be sent to"+"emailAddress" "
+Invalid: display "Please enter a valid email address"
+endcase
+display "would you like to continue editing profile?"
+Get response(YES/NO)
+if(response==YES) then
+User continues editing
+elseif(response==NO) then
+display "Your account has been successfully created!"
+END
+
+
+
+PURCHASING ITEMS
+START
+Display "Select preffered items to purchase"
+Display "Tap on Done to add selected items to cart"
+repeat
+Get items
+until(items="Done")
+count=0
+Prompt numberOfItems
+Get numberOfItems
+dowhile(count<numberOfItems)
+totalPrice=totalPrice+numberOfItems(count)*itemPrice
+count=count+1
+enddo
+Print totalPrice
+dispaly "would you like to purchase your items now?"
+Prompt response
+Get response(YES/NO)
+case of (response){
+YES:display" Enter payment method"
+NO: Display"purchase cancelled"
+Default message: Invalid input"
+endcase
+Prompt accountNo
+Get accountNo
+accountBalance=accountBalance 
+if(totalPrice<accountBalance) then
+display "Items successfully purchased"
+else display "You have insufficent money to purchase items"
+endif
+End 
+
+
+
+MAKING ORDERS
+START
+Select items
+Get items
+Display "would you like to order the items?
+Prompt response
+Get response(YES/NO)
+if(response==YES)then
+Prompt paymentMethod
+Get paymentMethod
+Compute totalPrice=totalPrice+numberOfitems(count)*itemPrice
+Print totalPrice
+Compute change=accountBalance-totalPrice
+Print change
+Else Display "Order cancelled"
+Endif
+display "enter delivery location"
+Prompt location
+Get location
+case of(location){
+valid:display" "your items will be delivered to the location"+"location" "
+invalid:display "please enter a vaild location"
+default: display"invalid input"
+endcase
+END
+
+
+
+MAKING APPOINTMENTS
+START
+Prompt appointmentType
+Get appointmentType
+Prompt currentDate
+Get currentDate
+Prompt dateOfAppointment
+Get dateOfappointment
+if(currentDate<=dateOfAppointment) then
+display " "Your appointment has been set on the"+"dateOfappointment" "
+Else 
+display "You cannot set on a date which has passed, please select a valid date!"
+endif
+END 
+
+
+
+PROMOTIONS
+START
+if(user taps on promotionTab) then
+display"Buy items more than N$ 500 and get 25% discount and N$ 200 gift card"
+endif
+END
+
+
+
+FOR AYESHA BEAUTY CREATION( WORKERS&MANAGERS)
+LOGGING IN
+START
+Prompt username
+Get username
+Prompt workId
+Get workId
+if(username is valid) AND (workId is Valid) then 
+display" "Welcome"+"username" "
+else display "invalid username and work id!.Please enter a valid username and work id"
+endif
+END
+
+
+VIEWING SALES
+START
+Display "Would you like to view today's sales"
+Prompt response
+Get response
+if(response==YES) then
+Go to sales chart
+Else 
+Go to Home screen
+endif						
+endif
+END
+
+
+STOCK COUNT
+START
+Prompt totalStock
+Get totalStock
+Prompt numberOfItemsBought
+Get numberOfItemsBought
+Dowhile(numberOfItemsBought<=totalStock)
+remainingStock=totalStock-numberOfItemsBought
+Enddo
+Print remainingStock
+END
+
+
+SAVING APPOINTMENTS
+START
+Prompt appointmentList
+Get appointmentList
+display "would you like to save the list to a database?"
+Prompt response
+Get response
+case of (response){
+YES: display "List successfully saved to Appointments database"
+NO: display"List not saved"
+Default message: display" Invalid response"
+endcase
+END
+
+
+ORDERING NEW STOCK
+START
+Prompt item
+Get item
+Prompt itemNo
+Get itemNo
+display "would you like to order this item/s?"
+Prompt response
+Get response
+if(response==YES)
+display" item ordered"
+endif
+END
+
+
+EMPLOYEE RECORDS(SEARCHING FOR CERTAIN EMPLOYEE)
+START
+count=0
+employeeRecord[100]
+Search key=employeeName
+Prompt employeeName
+Get employeeName
+Dowhile(count<=100)
+if(search key==employeeRecord(count)
+display " "name"+ "is present in the record" "
+else
+count=count+1
+endif
+END
+
+
+NEW APPLICANT
+START
+Display "Tap SUBMIT to send appication"
+REPEAT
+Prompt name
+Get name
+Prompt profession
+Get profession
+case of (profession){
+barber: display "you qualify to apply"
+hairstylist: display "you qualify to apply"
+manicurist: display "you qualify to apply"
+Default: "Invalid profession!,you dont qualify to apply"
+endcase
+Prompt citizenship
+Get citizenship
+Prompt age
+Get age 
+if(citizenship=="Namibian") AND (age>=20)
+display "you qualify to apply"
+endif
+endif
+Prompt phoneNumber
+Get phoneNumber
+if (phoneNumber=10 INT)
+display"number saved!"
+else display"please enter a valid number"
+endif
+UNTIL("SUBMIT" is tapped)
+END
